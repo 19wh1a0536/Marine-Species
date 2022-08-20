@@ -1,0 +1,324 @@
+{%- macro infobox(S_name,Kingdom_tel,Phylum_tel,Subphylum_tel,Class_tel,Subclass_tel,  Order_tel,Family_tel,Subfamily_tel,Genus_tel,Species_tel) -%}
+
+
+    {{'{{Infobox fish'}}
+| scientific_name= {{S_name}}
+{%- if N_name!= 'nan' -%}
+ | name = {{N_name}}
+{%- endif -%}
+{%- if Kingdom_tel!= 'nan' -%}
+| kingdom  = {{Kingdom_tel}}
+{%- endif -%}
+{%- if Phylum_tel!= 'nan' -%}
+| phylum = {{Phylum_tel}}
+{%- endif -%}
+{%- if Subphylum_tel!= 'nan' -%}
+| sub_phylum = {{Subphylum_tel}}
+{%- endif -%}
+{%- if Class_tel!= 'nan' -%}
+| class={{Class_tel}}
+{%- endif -%}
+{%- if Subclass_tel!= 'nan' -%}
+| sub_class= {{Subclass_tel}}
+{%- endif -%}
+{%- if Order_tel!= 'nan' -%}
+| order= {{Order_tel}}
+{%- endif -%}
+{%- if Family_tel!= 'nan' -%}
+| family= {{Family_tel}}
+{%- endif -%}
+{%- if Subfamily_tel!= 'nan' -%}
+| sub_family = {{Subfamily_tel}}
+{%- endif -%}
+{%- if Genus_tel!= 'nan' -%}
+| genus= {{Genus_tel}}
+{%- endif -%}
+{%- if Species_tel!= 'nan' -%}
+| Species = {{Species_tel}}
+{%- endif -%}
+{{'}}\n'}}
+{%- endmacro -%}
+
+{%- macro intro(S_name,Common_names) -%}
+{%- if S_name!='nan' -%}
+        {%- set scientific_name=["ఈ చేప యొక్క శాస్త్రీయ నామం " + S_name] | join(' ') -%}
+    {{[scientific_name]|random}}
+    {%- endif -%}
+{%- if Common_names!='nan' -%}
+        {%- set names=["ఈ చేపకి ఉన్న సాధారణ పేర్లు " + Common_names + " ఈ సాధారణ పేర్లు వివిధ ప్రదేశాలలో ఈ చేపలకు వాడుకలో ఉన్నవి."] | join(' ') -%}
+    {{[names]|random}}
+    {%- endif -%}
+{%- endmacro -%}
+
+
+{%- macro environment(S_name,Environment_tel,Depth_range,Climate_vulnerability) -%}
+{%- if  Environment_tel!='nan' -%}
+        {%- set environment=["ఈ చేప " + Environment_tel + " పరిస్థితులలో పెరుగుతుంది." ]| join(' ') -%}
+        {{[environment]|random}}
+    {%- endif -%}
+{%- if Depth_range!='nan' -%}
+        {%- set depth=["ఈ చేపల యొక్క లోతు పరిధి " + Depth_range+ " మీటర్లు దాకా ఉంటుంది."] | join(' ') -%}
+        {{[depth]|random}}
+    {%- endif -%}
+{%- if Climate_vulnerability!='nan' -%}
+        {%- set climate=[S_name+"చేపల యొక్క వాతావరణ దుర్బలత్వం " + Climate_vulnerability
++ " ఉంటుంది."] | join(' ') -%}
+    {%- endif -%}
+    {{[climate]|random}}
+{%- endmacro -%}
+
+
+{%- macro description(S_name,Max_length,Prio_tel,Body_lateral,Cross_section,Dorsal_head,Eyes_type,Mouth_type,Mouth_position,Dorsal_spines,Dorsal_rays,Anal_spines,Anal_rays,Vertebrae_tel, Common_length,Weight_tel, Age_tel) -%}
+
+{%- if Max_length!='nan' -%}
+        {%- set appx_height=["శాస్త్రీయ పేరు యొక్క పొడవు"+Max_length+ " గరిష్టంగా ఉంటుంది. "] | join(' ') -%}
+        {{[appx_height]|random}}
+    {%- endif -%}
+
+{%- if Body_lateral!='nan' -%}
+        {%- set shape=["ఈ చేప యొక్కశరీర ఆకృతి"+Body_lateral+" ఈ విధంగా ఉంటుంది. "] | join(' ') -%}
+        {{[shape]|random}}
+    {%- endif -%}
+
+{%- if Cross_section!='nan' -%}
+        {%- set cross_section=["ఈ చేప యొక్క క్రాస్ సెక్షన్"+Cross_section+ "ఆకారంలో ఉంటుంది. "] | join(' ') -%}
+        {{[cross_section]|random}}
+    {%- endif -%}
+
+{%- if Dorsal_head!='nan' -%}
+        {%- set dorsal_head=["ఈ చేప యొక్కతల భాగం "+Dorsal_head+" ఇలా ఉంటుంది. "] | join(' ') -%}
+        {{[dorsal_head]|random}}
+    {%- endif -%}
+    
+{%- if Eyes_type!='nan' -%}
+        {%- set eye=["ఈ చేప కళ్ళు "+ Eyes_type+" ఈ విధంగా ఉంటాయి."] | join(' ')  -%}
+    {{[eye]|random}}
+    {%- endif -%}
+
+{%- if Mouth_type!='nan' -%}
+        {%- set nose_mouth=["ఈ చేపకు నోరు మరియు ముక్కు యొక్క స్థానం "+Mouth_type+" ఇలా ఉంటాయి. "]  | join(' ') -%}
+        {{[nose_mouth]|random}}
+    {%- endif -%}
+
+{%- if Mouth_position!='nan' -%}
+        {%- set mouth_place=["దీని యొక్క నోటి స్థానం "+ Mouth_position +"గా ఉంటుంది. "] | join(' ') -%}
+        {{[mouth_place]|random}}
+    {%- endif -%}
+
+{%- if Dorsal_spines!='nan' -%}
+        {%- set dorsal_spine=["ఈ చేపకు డోర్సల్ వెన్నెముకల సంఖ్య "+Dorsal_spines+"."] | join(' ') -%}
+        {{[dorsal_spine]|random}}
+    {%- endif -%}
+
+{%- if Dorsal_rays!='nan' -%}
+        {%- set dorsal_rays=["ఈ చేపకు డోర్సల్ సాఫ్ట్ కిరణాలు సంఖ్య "+Dorsal_rays+"."] | join(' ') -%}
+        {{[dorsal_rays]|random}}
+    {%- endif -%}
+
+{%- if Anal_spines!='nan' -%}
+        {%- set anal_spine=["ఈ చేపకు అనాల్ వెన్నెముకలు సంఖ్య"+Anal_spines+"."] | join(' ') -%}
+        {{[anal_spine]|random}}
+    {%- endif -%}
+
+{%- if Anal_rays!='nan' -%}
+        {%- set anal_rays=["ఈ చేపకు అనాల్ సాఫ్ట్ కిరణాలు సంఖ్య "+Anal_rays+"."]  | join(' ')-%}
+        {{[anal_rays]|random}}
+    {%- endif -%}
+
+{%- if Vertebrae_tel!='nan' -%}
+        {%- set height=["శాస్త్రీయ పేరు యొక్క  సాధారణ పొడవు"+Vertebrae_tel+"."] | join(' ')-%}
+        {{[height]|random}}
+    {%- endif -%}
+
+{%- if Weight_tel!='nan' -%}
+        {%- set weight=["గరిష్టంగా ఈ చేప యొక్క బరువు "+Weight_tel+" ."] | join(' ')-%}
+    {{[weight]|random}}
+    {%- endif -%}
+
+{%- if Age_tel!='nan' -%}
+        {%- set age=["ఈ చేప గరిష్టంగా "+Age_tel+" బ్రతుకుతుంది అని అంచనా."] | join(' ') -%}
+        {{[age]|random}}
+    {%- endif -%}
+{%- endmacro -%}
+
+
+{%- macro distribution(S_name,Distribute_tel) -%}
+{%- if Distribute_tel!='nan' -%}
+        {%- set dist=[S_name+"యొక్క పంపిణీ " + Distribute_tel +" ఈ ప్రదేశాలలో ఎక్కువగా నివసిస్తుంటాయి."] | join(' ') -%}
+        {{[dist]|random}}
+    {%- endif -%}
+{%- endmacro -%}
+
+{%- macro  classification(S_name,Kingdom_tel,Phylum_tel,Subphylum_tel,Infraphylum_tel,Parvphylum_tel,Gigaclass_tel,Class_tel,Subclass_tel,  Order_tel,Family_tel,Subfamily_tel,Genus_tel,Species_tel) -%}
+{%- if Kingdom_tel!='nan' -%}
+        {%- set kingdom=[S_name+" చేప యొక్క రాజ్యం "+Kingdom_tel+"."] | join(' ')-%}
+    {{[kingdom]|random}}
+    {%- endif -%}
+
+{%- if Phylum_tel!='nan' -%}
+        {%- set phylum=["ఈ చేప"+Phylum_tel+" అను భౌగోళికముకు చెందినది."] | join(' ')-%}
+    {{[phylum]|random}}
+    {%- endif -%}
+
+{%- if Subphylum_tel!='nan' -%}
+        {%- set subphylum=["ఈ చేప యొక్క సబ్ఫిలమ్ "+Subphylum_tel+"." ] | join(' ') -%}
+    {{[subphylum]|random}}
+    {%- endif -%}
+
+{%- if Infraphylum_tel!='nan' -%}
+        {%- set i_phylum=["ఈ చేప యొక్క ఇన్ఫ్రాఫిలమ్ "+Infraphylum_tel+"."] | join(' ')-%}
+    {{[i_phylum]|random}}
+    {%- endif -%}
+
+{%- if Parvphylum_tel!='nan' -%}
+        {%- set p_phylum=["ఈ చేప యొక్క పార్వ్ఫిలమ్ "+Parvphylum_tel+"."] | join(' ')-%}
+    {{[p_phylum]|random}}
+    {%- endif -%}
+
+{%- if Gigaclass_te!='nan' -%}
+        {%- set giga_class=["ఈ చేప "+Gigaclass_tel+" అను గిగాక్లాస్ కి చెందినది. "] | join(' ')-%}
+    {{[giga_class]|random}}
+    {%- endif -%}
+
+{%- if Class_tel!='nan' -%}
+        {%- set class=["ఈ చేప యొక్క తరగతి "+Class_tel+"."] | join(' ')-%}
+    {{[class]|random}}
+    {%- endif -%}
+
+{%- if Subclass_tel!='nan' -%}
+        {%- set sub_class=[Subclass_tel+"అను సబ్క్లాస్ కు చెందిన చేప ఇది."] | join(' ')-%}
+        {{[sub_class]|random}}
+    {%- endif -%}
+
+{%- if Order_tel!='nan' -%}
+        {%- set order=["ఈ చేప యొక్కఆర్డర్ "+Order_tel+"."] | join(' ')-%}
+        {{[order]|random}}
+    {%- endif -%}
+
+{%- if Family_tel!='nan' -%}
+        {%- set family=[S_name+"ఈ చేప "+Family_tel +" అను కుటుంబానికి చెందినది."] | join(' ')-%}
+        {{[family]|random}}
+    {%- endif -%}
+
+{%- if Subfamily_tel!='nan' -%}
+        {%- set sub_family=["ఈ చేప యొక్కఉపకుటుంబం "+Subfamily_tel+"."] | join(' ')-%}
+        {{[sub_family]|random}}
+    {%- endif -%}
+
+{%- if Genus_tel!='nan' -%}
+        {%- set gene=["ఈ చేప "+Genus_tel+"అను జాతికి చెందిన చేప."] | join(' ')-%}
+    {{[gene]|random}}
+    {%- endif -%}
+
+{%- if Species_tel!='nan' -%}
+        {%- set species=["ఈ చేప "+Species_tel+" అను జాతులులోఒకటి. "] | join(' ') -%}
+    {{[species]|random}}
+    {%- endif -%}
+
+{%- endmacro -%}
+
+{%- macro food(S_name,Feeding_type,Feeding_habit,Trophic_tel) -%}
+{%- if Feeding_type!='nan' -%}
+        {%- set feeding_type=["ఈ చేపలు " + Feeding_type+" పై ఆధారపడతాయి ."] | join(' ') -%}
+        {{[feeding_type]|random}}
+    {%- endif -%}
+{%- if Feeding_habit!='nan' -%}
+        {%- set feeding_way=["ఇవి " + Feeding_habit + "వేటాడటాయి."] | join(' ') -%}
+    {{[feeding_way]|random}}
+    {%- endif -%}
+    
+
+{%- endmacro -%}
+
+
+
+{%- macro time(S_name,Generate_time,Resili_tel,Pd_index,Fishing_vulnerability,Climate_vulnerability)-%}
+{%- if Generate_time!='nan' -%}
+        {%- set gene_time=[S_name + " యొక్క తరం సమయం"+Generate_time+" పై ఆధారపడతాయి ."]  | join(' ') -%}
+        {{[gene_time]|random}}
+    {%- endif -%}
+{%- if Resili_tel!='nan' -%}
+        {%- set Resilience=["ఇది వృద్ధి అధ్యయనాల ఆధారంగా " + Resili_tel + " గా అంచనా వేయబడింది"] | join(' ')-%}
+        {{[Resilince]|random}}
+    {%- endif -%}
+{%- if Prior_tel!='nan' -%}
+        {%- set tropic=[S_name+" యొక్క ఫైలోజెనెటిక్ డైవర్సిటీ ఇండెక్స్ "+ Pd_index] | join(' ')-%}
+        {{[tropic]|random}}
+    {%- endif -%}
+{%- if Fishing_vulnerability!='nan' -%}
+        {%- set fi=["ఫిషింగ్ దుర్బలత్ వం"+ Fishing_vulnerability+" దుర్బలత్వంగా ఉంటుంది"]  | join(' ')-%}
+        {{[Fishing_vulnerability]|random}}
+    {%- endif -%}
+{%- if Climate_vulnerability!='nan' -%}
+        {%- set ci=["అనగా "+ Climate_vulnerability + "."] | join(' ')-%}
+        {{[Climate_vulnerability]|random}}
+    {%- endif -%}
+{%- endmacro -%}
+
+
+
+{%-macro nutrients(S_name,Calcium_median,Calcium_lower,Calcium_upperer,Iron_median,Iron_lower,Iron_upperer,Selenium_median,Selenium_lower,Selenium_upperer,Zinc_median,Zinc_lower,Zinc_upperer,Vitamin_a_median,Vitamin_a_lower,Vitamin_a_upperer,Omega_median,Omega_lower,Omega_upperer,Protein_median, Protein_lower,Protein_upperer) -%}
+{%- if  Calcium_median!='nan' -%}
+        {%- set calcium=[S_name+" ఈ చేప నుంచి లభించే కాల్షియం మధ్యస్తంగా "+Calcium_median+" తక్కువగా లభించే కాల్షియం "+Calcium_lower+" ఎగువుగా లభించే కాల్షియం "+Calcium_upperer+"."] | join(' ')-%}
+        {{[calcium]|random}}
+    {%- endif -%}
+
+{%- if Iron_median!='nan' -%}
+        {%- set iron=[S_name+" ఈ చేప నుంచి లభించే ఐరన్ మధ్యస్తంగా "+Iron_median+" తక్కువగా లభించే ఐరన్ "+Iron_lower+" ఎగువుగా లభించే ఐరన్ "+Iron_upperer+"."] | join(' ')-%}
+        {{[iron]|random}}
+    {%- endif -%}
+
+
+{%- if Selenium_median!='nan' -%}
+        {%- set selenium=[S_name+" ఈ చేప నుంచి లభించే సెలీనియం మధ్యస్తంగా "+Selenium_median+" తక్కువగా లభించే సెలీనియం "+Selenium_lower+" ఎగువుగా లభించే సెలీనియం "+Selenium_upperer+"."] | join(' ')  -%}
+        {{[selenium]|random}}
+    {%- endif -%}
+
+{%- if Zinc_median!='nan' -%}
+        {%- set zinc=[S_name+"ఈ చేప నుంచి లభించే జింక్ మధ్యస్తంగా"+Zinc_median+"తక్కువగా లభించే జింక్"+Zinc_lower+"ఎగువుగా లభించే జింక్"+Zinc_upperer+"."] | join(' ')  -%}
+        {{[zinc]|random}}
+    {%- endif -%}
+
+{%- if Vitamin_a_median!='nan' -%}
+        {%- set vitamin_A=[S_name + "ఈ చేప నుంచి లభించే విటమిన్ ఎ మధ్యస్తంగా"+Vitamin_a_median+" తక్కువగా లభించే విటమిన్ ఎ"+Vitamin_a_lower+" ఎగువుగా లభించే విటమిన్ ఎ"+Vitamin_a_upperer+"."]  | join(' ') -%}
+        {{[vitamin_A]|random}}
+    {%- endif -%}
+
+{%- if Omega_median!='nan' -%}
+        {%- set omegat=[S_name +" ఈ చేప నుంచి లభించే ఒమేగా-3 మధ్యస్తంగా"+Omega_median+"తక్కువగా లభించే ఒమేగా-3 "+Omega_lower+" ఎగువుగా లభించే ఒమేగా-3"+Omega_upperer+"."]  | join(' ') -%}
+        {{[omegat]|random}}
+    {%- endif -%}
+
+{%- if Protein_median!='nan' -%}
+        {%- set protein=[S_name+" ఈ చేప నుంచి లభించే ప్రోటీన్ మధ్యస్తంగా "+Protein_median+" తక్కువగా లభించే ప్రోటీన్ "+Protein_lower+" ఎగువుగా లభించే ప్రోటీన్ "+Protein_upperer+"."] | join(' ') -%}
+        {{[protein]|random}}
+    {%- endif -%}
+
+{%- endmacro -%}
+
+
+{%- macro info(S_name,Price_category,Threats_tel) -%}
+{%- if Price_category!='nan' -%}
+        {%- set community=[S_name +"ధర వర్గం"+Price_category+"."] | join(' ') -%}
+        {{[community]|random}}
+    {%- endif -%}
+{%- if Threats_tel!='nan' -%}
+        {%- set human_threat=[S_name +" మానవులకు "+Threats_tel+"."] | join(' ') -%}
+    {{[human_threat]|random}}
+    {%- endif -%}
+{%- endmacro -%}
+
+{#Main article is generated from here#}
+
+
+{{-infobox(S_name,Kingdom_tel,Phylum_tel,Subphylum_tel,Class_tel,Subclass_tel,  Order_tel,Family_tel,Subfamily_tel,Genus_tel,Species_tel)}}
+{{intro(S_name,Common_names)}}
+{{environment(S_name,Environment_tel,Depth_range,Climate_vulnerability) }}
+{{description(S_name,Max_length,Prio_tel,Body_lateral,Cross_section,Dorsal_head,Eyes_type,Mouth_type,Mouth_position,Dorsal_spines,Dorsal_rays,Anal_spines,Anal_rays,Vertebrae_tel, Common_length,Weight_tel, Age_tel)}}
+{{distribution(S_name,Distribute_tel) }}
+{{classification(S_name,Kingdom_tel,Phylum_tel,Subphylum_tel,Infraphylum_tel,Parvphylum_tel,Gigaclass_tel,Class_tel,Subclass_tel,  Order_tel,Family_tel,Subfamily_tel,Genus_tel,Species_tel)}}
+{{ food(S_name,Feeding_type,Feeding_habit,Trophic_tel)}} 
+{{time(S_name,Generate_time,Resili_tel,Pd_index,Fishing_vulnerability,Climate_vulnerability) }} 
+{{nutrients(S_name,Calcium_median,Calcium_lower,Calcium_upperer,Iron_median,Iron_lower,Iron_upperer,Selenium_median,Selenium_lower,Selenium_upperer,Zinc_median,Zinc_lower,Zinc_upperer,Vitamin_a_median,Vitamin_a_lower,Vitamin_a_upperer,Omega_median,Omega_lower,Omega_upperer,Protein_median, Protein_lower,Protein_upperer)}}
+{{info(S_name,Price_category,Threats_tel) }}
+{# Code for References #}
